@@ -39,12 +39,26 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What is the purpose of using _sessions_?
+ To persist authentication information so the new requests are made and the server refreshes. Sessions are stored in memory either in a via files or in the database in the server. When the user login with a vaild credentials request, they send the cookie to the backend, and the server checks the session based on the cookie.
+
 
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
 
+Bcrypt uses hasing which is a process in which the password is translated to a string. By hashing the password before it is passed in the database it's never store in the plaintext password in the database, and that the string can never be turned back into the password.
+
+
 - [ ] What does bcrypt do to slow down attackers?
 
+
+An algorithm that hashes the information multiple times means that an attacker trying to heaker needs the hash, know the algoithm user, and how many rounds were user to generate the hash in the first place.
+
+
 - [ ] What are the three parts of the JSON Web Token?
+
+HEADER: Contain the algorithm with the token type. Typically the header for the JWT will look like.
+PAYLOAD: It claims information or any other data like tos store in the token,  which is the user id. 
+SIGNATURE: Needs a string by base64 encoding the header and the payload together, and signing it with a secret.
+
 
 ## Minimum Viable Product
 
